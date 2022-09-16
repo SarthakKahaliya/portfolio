@@ -20,9 +20,9 @@ function Footer() {
             <li className="s-icons">
               <a
                 href="mailto:sarthakkahaliya@vt.edu"
+                style={{ color: "white" }}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="icon-colour  home-social-icons"
               >
                 <AiFillMail />
               </a>
