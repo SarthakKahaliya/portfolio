@@ -21,6 +21,7 @@
   "dependencies": {
     "@mantine/core": "7.11.2",
     "@mantine/hooks": "7.11.2",
+    "@react-pdf/renderer": "^3.4.4",
     "bootstrap": "^5.3.3",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
@@ -31,7 +32,7 @@
     "react-pdf": "^9.1.0",
     "react-router-dom": "^6.23.1",
     "react-router-hash-link": "^2.4.3",
-    "react-tsparticles": "^2.12.2",
+    "react-tsparticles": "^1.42.2",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
