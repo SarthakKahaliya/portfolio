@@ -10,8 +10,7 @@ const useHashObserver = (ids: string[]) => {
                 if (entry.isIntersecting) {
                     const id = entry.target.getAttribute('id');
                     // navigate(`#${id}`, { replace: true });
-                    window.history.replaceState(null, '', `#${id}`);
-                    console.log(`#${id}`);
+                    window.history.replaceState(null, '', ' ');
                     setActiveHash(`#${id}`);
                 }
             });
@@ -23,6 +22,8 @@ const useHashObserver = (ids: string[]) => {
             const element = document.getElementById(id);
             if (element) {
                 observer.observe(element);
+            } else {
+                setActiveHash(undefined);
             }
         });
 
