@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { MantineProvider } from '@mantine/core';
 import Preloader from './components/Pre';
 import Navbar from './components/Navbar';
@@ -35,12 +35,15 @@ function App() {
           <Navbar />
           <ScrollToTop />
           <Routes>
-            <Route path="/portfolio/" element={<Home />} />
-            <Route path="/portfolio/project" element={<Projects />} />
-            <Route path="/portfolio/about" element={<About />} />
-            <Route path="/portfolio/resume" element={<Resume />} />
-            {/* <Route path="/contact" element={<Contact />} /> */}
-            <Route path="*" element={<Navigate to="/portfolio/" />} />
+            <Route path="portfolio">
+              <Route index element={<Home />} />
+              <Route path="project" element={<Projects />} />
+              <Route path="about" element={<About />} />
+              <Route path="resume" element={<Resume />} />
+             
+              {/* <Route path="*" element={<Navigate to="/portfolio" />} /> */}
+            </Route>
+            {/* <Route path="*" element={<Navigate to="portfolio" />} /> */}
           </Routes>
           <Footer />
         </div>

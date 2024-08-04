@@ -3,8 +3,11 @@ import homeLogo from '../../Assets/home-main.svg';
 import Particle from '../Particle';
 import Home2 from './Home2';
 import Type from './Type';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
+
   return (
     <section>
       <Container fluid className="home-section" id="home">
