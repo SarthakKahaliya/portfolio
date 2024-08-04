@@ -19,8 +19,7 @@ function Footer() {
           <ul className="footer-icons">
             <li className="s-icons">
               <a
-                href="mailto:sarthakkahaliya@vt.edu"
-                style={{ color: 'white' }}
+                href="mailto:sarthakkahaliya@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -30,7 +29,6 @@ function Footer() {
             <li className="s-icons">
               <a
                 href="https://github.com/SarthakKahaliya"
-                style={{ color: 'white' }}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -40,7 +38,6 @@ function Footer() {
             <li className="s-icons">
               <a
                 href="https://www.linkedin.com/in/sarthak-kahaliya/"
-                style={{ color: 'white' }}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -50,7 +47,6 @@ function Footer() {
             <li className="s-icons">
               <a
                 href="https://www.instagram.com/sarthak_kahaliya/"
-                style={{ color: 'white' }}
                 target="_blank"
                 rel="noopener noreferrer"
               >

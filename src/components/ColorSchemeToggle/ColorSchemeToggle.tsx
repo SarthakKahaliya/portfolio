@@ -28,7 +28,7 @@ export function ColorSchemeToggle() {
           <MoonIcon className={cx(classes.icon, classes.dark)} />
         </ActionIcon>
       </HoverCard.Target>
-      <HoverCard.Dropdown>
+      <HoverCard.Dropdown style={{ zIndex: 2000, border: 'var(--my-text-color)' }} bg="var(--my-background-color)">
         Toggle {computedColorScheme === 'dark' ? 'Light Mode' : 'Dark Mode'}
       </HoverCard.Dropdown>
     </HoverCard>

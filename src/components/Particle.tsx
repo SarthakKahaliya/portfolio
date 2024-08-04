@@ -1,6 +1,8 @@
+import { useComputedColorScheme } from '@mantine/core';
 import Particles from 'react-tsparticles';
 
 function Particle() {
+  const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
   return (
     <Particles
       id="tsparticles"
@@ -31,6 +33,13 @@ function Particle() {
               opacity_min: 0.05,
             },
           },
+          // color: {
+          //   "value": {
+          //     "r": 100,
+          //     "b": 100,
+          //     "g": 0,
+          //   }
+          // },
         },
         interactivity: {
           events: {

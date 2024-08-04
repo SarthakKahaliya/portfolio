@@ -1,17 +1,16 @@
-html {
-  --section-background-color: linear-gradient(
-    to bottom left,
-    rgba(17, 16, 16, 0.582),
-    rgba(12, 8, 24, 0.904)
-  );
+body {
 
-  --image-gradient: linear-gradient(
-    to bottom left,
-    rgba(17, 16, 16, 0.678),
-    rgba(12, 10, 22, 0.863)
-  );
+  --my-background-color-blur: light-dark(linear-gradient(to left, rgba(226, 210, 254, 0.6), rgba(219, 208, 254,0.6)) ,linear-gradient(to left, rgba(27, 20, 41, 0.6), rgba(20, 15, 35, 0.6)));
 
+  /* --section-background-color: light-dark(linear-gradient(to left, rgb(191, 179, 214), rgb(168, 159, 194)) ,linear-gradient(to left, rgb(27 20 41), rgb(20 15 35)));; */
+
+  /* --image-gradient: light-dark(linear-gradient(to left, rgb(191, 179, 214), rgb(168, 159, 194)) ,linear-gradient(to left, rgb(27 20 41), rgb(20 15 35)));; */
+
+  /* --my-text-color: light-dark(dark, white); */
+
+  --my-text-color: light-dark(black,white);
   --imp-text-color: #c770f0;
+
 }
 
 .purple {
@@ -83,6 +82,8 @@ button:focus {
 }
 
 .navbar {
+  background-image: var(--my-background-color-blur);
+  backdrop-filter: blur(10px);
   position: fixed !important;
   transition: all 0.3s ease-out 0s !important;
   padding: 0.3rem 2rem !important;
@@ -160,7 +161,7 @@ button:focus {
 }
 
 .navbar-nav .nav-link {
-  color: white !important;
+  color: light-dark(black,white) !important;
   padding-right: 1rem !important;
   padding-left: 1rem !important;
 }
@@ -272,7 +273,7 @@ button:focus {
 
 .home-content {
   padding: 9rem 0 2rem !important;
-  color: whitesmoke;
+  /* color: whitesmoke; */
   text-align: left;
 }
 
@@ -339,7 +340,7 @@ button:focus {
 }
 
 .home-about-description {
-  color: white !important;
+  /* color: white !important; */
   padding-top: 100px !important;
   padding-bottom: 20px !important;
   text-align: center;
@@ -354,7 +355,7 @@ button:focus {
 .home-about-social {
   text-align: center !important;
   padding-top: 25px;
-  color: white !important;
+  /* color: white !important; */
 }
 
 .home-about-social-links {
@@ -417,7 +418,7 @@ button:focus {
 /* Footer */
 /* --------- */
 .footer {
-  background-color: rgb(10, 4, 22);
+  /* background-color: rgb(10, 4, 22); */
   position: relative;
   bottom: 0 !important;
   padding-top: 10px !important;
@@ -432,6 +433,10 @@ button:focus {
   text-align: center !important;
 }
 
+.footer .s-icons a {
+  color: var(--my-text-color);
+}
+
 @media (max-width: 767px) {
   .footer-copywright {
     text-align: center !important;
@@ -444,7 +449,7 @@ button:focus {
 
 .footer h3 {
   font-size: 1em;
-  color: white !important;
+  /* color: white !important; */
   margin-top: 0.5em !important;
   margin-bottom: 0.5em !important;
 }
@@ -465,7 +470,7 @@ button:focus {
   padding-top: 150px !important;
   height: 100%;
   padding-bottom: 30px !important;
-  background-color: rgb(10, 4, 22);
+  /* background-color: rgb(10, 4, 22); */
   /* background-image: var(--section-background-color) !important; */
   background-repeat: repeat-y !important;
 }
@@ -484,7 +489,7 @@ button:focus {
 
 .project-card-view {
   box-shadow: 0 4px 5px 3px rgba(119, 53, 136, 0.459) !important;
-  color: white !important;
+  color: var(--my-text-color) !important;
   background-color: transparent !important;
   opacity: 0.9 !important;
   transition: all 0.5s ease 0s !important;
@@ -507,13 +512,13 @@ button:focus {
 .blog-card-view {
   background-color: transparent !important;
   box-shadow: 0 3px 3px 2px rgba(145, 77, 161, 0.459) !important;
-  color: white !important;
+  /* color: white !important; */
   transition: all 0.5s ease 0s !important;
   height: 100% !important;
 }
 
 .blog-link {
-  color: white !important;
+  /* color: white !important; */
   text-decoration: none !important;
 }
 
@@ -555,7 +560,6 @@ button:focus {
   box-shadow: none !important;
 }
 .project-heading {
-  color: white !important;
   font-size: 2.3em !important;
   font-weight: 500 !important;
   padding-top: 10px !important;
@@ -571,7 +575,7 @@ button:focus {
   padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
   background-repeat: repeat-y !important;
-  color: white !important;
+  /* color: white !important; */
 }
 
 .exp-content {
@@ -624,7 +628,7 @@ button:focus {
 
 .quote-card-view {
   border: none !important;
-  color: white !important;
+  color: var(--my-text-color) !important;
   background-color: transparent !important;
 }
 
@@ -649,7 +653,7 @@ button:focus {
   padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
   background-repeat: repeat-y !important;
-  color: white !important;
+  /* color: white !important; */
 }
 
 .resume {

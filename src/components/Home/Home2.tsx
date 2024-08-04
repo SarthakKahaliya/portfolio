@@ -8,6 +8,20 @@ import { FaLinkedinIn } from 'react-icons/fa';
 import profilePhoto from '../../Assets/sarthak.jpg';
 
 function Home2() {
+  const now = new Date();
+  const startDate = new Date(2022, 8);
+  let yearsDifference = now.getFullYear() - startDate.getFullYear();
+  let monthsDifference = now.getMonth() - startDate.getMonth();
+
+  if (monthsDifference < 0) {
+    yearsDifference--;
+    monthsDifference += 12;
+  }
+  
+  const yearString = yearsDifference !== 0 && `${yearsDifference} ${yearsDifference > 1 ? "years" : "year"}`;
+  const monthString = monthsDifference !== 0 && `${monthsDifference} ${monthsDifference > 1 ? "months" : "month"}`;
+
+
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
@@ -17,7 +31,8 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I am a software engineering graduate student at
+              I am a full time software engineer with <b className="purple">{yearString} {monthString} </b>  of experience in the industry
+              building Web Applications
               <i>
                 <b className="purple"> Virginia Tech</b>
               </i>{' '}

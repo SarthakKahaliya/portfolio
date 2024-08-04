@@ -17,6 +17,7 @@ import {
 
 import { CgFileDocument } from 'react-icons/cg';
 import useHashObserver from '@/hooks/useHashObserver';
+import { ColorSchemeToggle } from './ColorSchemeToggle/ColorSchemeToggle';
 
 const links = [
   {type: HashLink, link: "/portfolio#home", label: "Home", icon: <AiOutlineHome style={{ marginBottom: '2px' }} />},
@@ -42,6 +43,7 @@ function NavBar() {
             SK
           </h1>
         </Navbar.Brand>
+        <ColorSchemeToggle />
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
