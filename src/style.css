@@ -1,17 +1,26 @@
-html {
-  --section-background-color: linear-gradient(
-    to bottom left,
-    rgba(17, 16, 16, 0.582),
-    rgba(12, 8, 24, 0.904)
+body {
+  --my-background-color-blur: light-dark(
+    linear-gradient(to left, rgba(226, 210, 254, 0.6), rgba(219, 208, 254, 0.6)),
+    linear-gradient(to left, rgba(27, 20, 41, 0.6), rgba(20, 15, 35, 0.6))
   );
 
-  --image-gradient: linear-gradient(
-    to bottom left,
-    rgba(17, 16, 16, 0.678),
-    rgba(12, 10, 22, 0.863)
+  --my-background-color-blur-opaque: light-dark(
+    linear-gradient(to left, rgb(226, 210, 254), rgb(219, 208, 254)),
+    linear-gradient(to left, rgb(27, 20, 41), rgb(20, 15, 35))
   );
 
-  --imp-text-color: #c770f0;
+  /* --section-background-color: light-dark(linear-gradient(to left, rgb(191, 179, 214), rgb(168, 159, 194)) ,linear-gradient(to left, rgb(27 20 41), rgb(20 15 35)));; */
+
+  /* --image-gradient: light-dark(linear-gradient(to left, rgb(191, 179, 214), rgb(168, 159, 194)) ,linear-gradient(to left, rgb(27 20 41), rgb(20 15 35)));; */
+
+  /* --my-text-color: light-dark(dark, white); */
+
+  --my-text-color: light-dark(black, white);
+  --imp-text-color: light-dark(#700aa0, #cd5ff8);
+}
+
+.my-text-color {
+  color: var(--my-text-color);
 }
 
 .purple {
@@ -83,6 +92,9 @@ button:focus {
 }
 
 .navbar {
+  background-image: var(--my-background-color-blur);
+  backdrop-filter: blur(10px);
+  /* backdrop-filter: opacity(0); */
   position: fixed !important;
   transition: all 0.3s ease-out 0s !important;
   padding: 0.3rem 2rem !important;
@@ -97,7 +109,7 @@ button:focus {
 
 .navbar-toggler span {
   display: block !important;
-  background-color: #be50f4 !important;
+  background-color: var(--imp-text-color) !important;
   height: 4px !important;
   width: 27px !important;
   margin-top: 5px !important;
@@ -144,7 +156,8 @@ button:focus {
   .navbar {
     padding: 1rem 2rem !important;
     font-size: 1.4rem !important;
-    background-color: #181a27 !important;
+    background: var(--my-background-color-blur-opaque);
+    box-shadow: #0c0513;
   }
   .navbar-nav .nav-item a::after {
     display: none !important;
@@ -160,7 +173,7 @@ button:focus {
 }
 
 .navbar-nav .nav-link {
-  color: white !important;
+  color: light-dark(black, white) !important;
   padding-right: 1rem !important;
   padding-left: 1rem !important;
 }
@@ -188,17 +201,21 @@ button:focus {
 }
 
 .navbar-nav .nav-item a::after {
-  content: "";
+  content: '';
   position: relative;
   display: block;
   height: 5px;
   width: 0;
   border-radius: 16px;
-  background: #c95bf5;
+  background: var(--imp-text-color);
   bottom: 1px;
   left: 0;
   z-index: -1;
   transition: all 0.3s ease-out 0s;
+}
+
+.navbar-nav .nav-item a[data-active='true']::after {
+  width: 100%;
 }
 
 .navbar-nav .nav-item a:hover::after {
@@ -266,7 +283,7 @@ button:focus {
 
 .home-content {
   padding: 9rem 0 2rem !important;
-  color: whitesmoke;
+  /* color: whitesmoke; */
   text-align: left;
 }
 
@@ -281,17 +298,17 @@ button:focus {
 }
 
 .main-name {
-  color: #cd5ff8;
+  color: var(--imp-text-color);
 }
 
 .Typewriter__wrapper {
   font-size: 2.2em !important;
-  color: #be6adf !important;
+  color: var(--imp-text-color) !important;
   font-weight: 600 !important;
 }
 .Typewriter__cursor {
   font-size: 2.4em !important;
-  color: #b562d6 !important;
+  color: var(--imp-text-color) !important;
 }
 
 @media (max-width: 767px) {
@@ -333,7 +350,7 @@ button:focus {
 }
 
 .home-about-description {
-  color: white !important;
+  /* color: white !important; */
   padding-top: 100px !important;
   padding-bottom: 20px !important;
   text-align: center;
@@ -348,7 +365,7 @@ button:focus {
 .home-about-social {
   text-align: center !important;
   padding-top: 25px;
-  color: white !important;
+  /* color: white !important; */
 }
 
 .home-about-social-links {
@@ -373,7 +390,7 @@ button:focus {
 }
 
 .home-social-icons::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -411,7 +428,7 @@ button:focus {
 /* Footer */
 /* --------- */
 .footer {
-  background-color: rgb(10, 4, 22);
+  /* background-color: rgb(10, 4, 22); */
   position: relative;
   bottom: 0 !important;
   padding-top: 10px !important;
@@ -426,6 +443,10 @@ button:focus {
   text-align: center !important;
 }
 
+.footer .s-icons a {
+  color: var(--my-text-color);
+}
+
 @media (max-width: 767px) {
   .footer-copywright {
     text-align: center !important;
@@ -438,7 +459,7 @@ button:focus {
 
 .footer h3 {
   font-size: 1em;
-  color: white !important;
+  /* color: white !important; */
   margin-top: 0.5em !important;
   margin-bottom: 0.5em !important;
 }
@@ -459,7 +480,7 @@ button:focus {
   padding-top: 150px !important;
   height: 100%;
   padding-bottom: 30px !important;
-  background-color: rgb(10, 4, 22);
+  /* background-color: rgb(10, 4, 22); */
   /* background-image: var(--section-background-color) !important; */
   background-repeat: repeat-y !important;
 }
@@ -478,7 +499,7 @@ button:focus {
 
 .project-card-view {
   box-shadow: 0 4px 5px 3px rgba(119, 53, 136, 0.459) !important;
-  color: white !important;
+  color: var(--my-text-color) !important;
   background-color: transparent !important;
   opacity: 0.9 !important;
   transition: all 0.5s ease 0s !important;
@@ -501,13 +522,13 @@ button:focus {
 .blog-card-view {
   background-color: transparent !important;
   box-shadow: 0 3px 3px 2px rgba(145, 77, 161, 0.459) !important;
-  color: white !important;
+  /* color: white !important; */
   transition: all 0.5s ease 0s !important;
   height: 100% !important;
 }
 
 .blog-link {
-  color: white !important;
+  /* color: white !important; */
   text-decoration: none !important;
 }
 
@@ -549,7 +570,6 @@ button:focus {
   box-shadow: none !important;
 }
 .project-heading {
-  color: white !important;
   font-size: 2.3em !important;
   font-weight: 500 !important;
   padding-top: 10px !important;
@@ -565,7 +585,7 @@ button:focus {
   padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
   background-repeat: repeat-y !important;
-  color: white !important;
+  /* color: white !important; */
 }
 
 .exp-content {
@@ -618,7 +638,7 @@ button:focus {
 
 .quote-card-view {
   border: none !important;
-  color: white !important;
+  color: var(--my-text-color) !important;
   background-color: transparent !important;
 }
 
@@ -643,7 +663,7 @@ button:focus {
   padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
   background-repeat: repeat-y !important;
-  color: white !important;
+  /* color: white !important; */
 }
 
 .resume {
@@ -710,7 +730,7 @@ button:focus {
 }
 
 .resume .resume-item::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 16px;
   height: 16px;
