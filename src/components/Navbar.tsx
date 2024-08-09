@@ -17,7 +17,7 @@ import {
 import { CgFileDocument } from 'react-icons/cg';
 import { useMediaQuery } from '@mantine/hooks';
 import { ColorSchemeToggle } from './ColorSchemeToggle/ColorSchemeToggle';
-import useHashObserver from '@/hooks/useHashObserver';
+import useHashObserver from '../hooks/useHashObserver';
 
 const links = [
   {
