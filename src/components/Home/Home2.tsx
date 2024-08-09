@@ -39,18 +39,29 @@ function Home2() {
               </b>
               of experience in the industry building
               <i>
-                <b className="purple"> Frontend Web Applications and Backend Services.</b>
+                <span className="purple"> Frontend Web Applications and Backend Services </span>
+              </i>
+              at
+              <b className="purple"> Lutron </b>
+              as
+              <i>
+                <span> Senior Software Platform Engineer </span>
+              </i>
+              and at
+              <b className="purple"> Immersive Analytics - Virginia Tech </b>
+              as
+              <i>
+                <span> Software Engineer.</span>
               </i>
               <br />
-              <br />
-              Using programming languages like
+              <br />I have been using programming languages like
               <i>
-                <b className="purple"> Python, Go (GoLang), TypeScript and C# </b>
+                <b className="purple"> Python, Go (GoLang), and TypeScript </b>
               </i>
               and modern Javascript Libraries, Frameworks and services like
               <i>
-                <b className="purple"> React, NextJS, AWS, RxDB</b> (to build Offline first
-                collaborative web applications).
+                <b className="purple"> React, AWS, RxDB</b> to build Offline first collaborative web
+                applications.
               </i>
               <br />
               <br />I also have experience building &nbsp;
