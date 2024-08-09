@@ -1,6 +1,13 @@
 body {
+  --my-background-color-blur: light-dark(
+    linear-gradient(to left, rgba(226, 210, 254, 0.6), rgba(219, 208, 254, 0.6)),
+    linear-gradient(to left, rgba(27, 20, 41, 0.6), rgba(20, 15, 35, 0.6))
+  );
 
-  --my-background-color-blur: light-dark(linear-gradient(to left, rgba(226, 210, 254, 0.6), rgba(219, 208, 254,0.6)) ,linear-gradient(to left, rgba(27, 20, 41, 0.6), rgba(20, 15, 35, 0.6)));
+  --my-background-color-blur-opaque: light-dark(
+    linear-gradient(to left, rgb(226, 210, 254), rgb(219, 208, 254)),
+    linear-gradient(to left, rgb(27, 20, 41), rgb(20, 15, 35))
+  );
 
   /* --section-background-color: light-dark(linear-gradient(to left, rgb(191, 179, 214), rgb(168, 159, 194)) ,linear-gradient(to left, rgb(27 20 41), rgb(20 15 35)));; */
 
@@ -8,9 +15,12 @@ body {
 
   /* --my-text-color: light-dark(dark, white); */
 
-  --my-text-color: light-dark(black,white);
-  --imp-text-color: #c770f0;
+  --my-text-color: light-dark(black, white);
+  --imp-text-color: light-dark(#700aa0, #cd5ff8);
+}
 
+.my-text-color {
+  color: var(--my-text-color);
 }
 
 .purple {
@@ -84,6 +94,7 @@ button:focus {
 .navbar {
   background-image: var(--my-background-color-blur);
   backdrop-filter: blur(10px);
+  /* backdrop-filter: opacity(0); */
   position: fixed !important;
   transition: all 0.3s ease-out 0s !important;
   padding: 0.3rem 2rem !important;
@@ -98,7 +109,7 @@ button:focus {
 
 .navbar-toggler span {
   display: block !important;
-  background-color: #be50f4 !important;
+  background-color: var(--imp-text-color) !important;
   height: 4px !important;
   width: 27px !important;
   margin-top: 5px !important;
@@ -145,7 +156,8 @@ button:focus {
   .navbar {
     padding: 1rem 2rem !important;
     font-size: 1.4rem !important;
-    background-color: #181a27 !important;
+    background: var(--my-background-color-blur-opaque);
+    box-shadow: #0c0513;
   }
   .navbar-nav .nav-item a::after {
     display: none !important;
@@ -161,7 +173,7 @@ button:focus {
 }
 
 .navbar-nav .nav-link {
-  color: light-dark(black,white) !important;
+  color: light-dark(black, white) !important;
   padding-right: 1rem !important;
   padding-left: 1rem !important;
 }
@@ -189,28 +201,26 @@ button:focus {
 }
 
 .navbar-nav .nav-item a::after {
-  content: "";
+  content: '';
   position: relative;
   display: block;
   height: 5px;
   width: 0;
   border-radius: 16px;
-  background: #c95bf5;
+  background: var(--imp-text-color);
   bottom: 1px;
   left: 0;
   z-index: -1;
   transition: all 0.3s ease-out 0s;
 }
 
-.navbar-nav .nav-item a[data-active="true"]::after{
+.navbar-nav .nav-item a[data-active='true']::after {
   width: 100%;
 }
 
 .navbar-nav .nav-item a:hover::after {
   width: 100%;
 }
-
-
 
 /* --------- */
 /* Home section */
@@ -288,17 +298,17 @@ button:focus {
 }
 
 .main-name {
-  color: #cd5ff8;
+  color: var(--imp-text-color);
 }
 
 .Typewriter__wrapper {
   font-size: 2.2em !important;
-  color: #be6adf !important;
+  color: var(--imp-text-color) !important;
   font-weight: 600 !important;
 }
 .Typewriter__cursor {
   font-size: 2.4em !important;
-  color: #b562d6 !important;
+  color: var(--imp-text-color) !important;
 }
 
 @media (max-width: 767px) {
@@ -380,7 +390,7 @@ button:focus {
 }
 
 .home-social-icons::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -720,7 +730,7 @@ button:focus {
 }
 
 .resume .resume-item::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 16px;
   height: 16px;

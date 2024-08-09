@@ -20,7 +20,7 @@ export function ColorSchemeToggle() {
         <ActionIcon
           onClick={() => setColorScheme(computedColorScheme === 'light' ? 'dark' : 'light')}
           variant="transparent"
-          color={computedColorScheme === 'dark' ? 'yellow' : 'dark'}
+          color={computedColorScheme === 'dark' ? 'yellow' : '#700aa0'}
           size="lg"
           aria-label="Toggle color scheme"
         >
@@ -28,7 +28,10 @@ export function ColorSchemeToggle() {
           <MoonIcon className={cx(classes.icon, classes.dark)} />
         </ActionIcon>
       </HoverCard.Target>
-      <HoverCard.Dropdown style={{ zIndex: 2000, border: 'var(--my-text-color)' }} bg="var(--my-background-color)">
+      <HoverCard.Dropdown
+        style={{ zIndex: 2000, border: 'var(--my-text-color)' }}
+        bg="var(--my-background-color)"
+      >
         Toggle {computedColorScheme === 'dark' ? 'Light Mode' : 'Dark Mode'}
       </HoverCard.Dropdown>
     </HoverCard>

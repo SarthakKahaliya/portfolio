@@ -17,18 +17,18 @@ import { theme } from './theme';
 // import Contact from "./components/Contact/Contact";
 
 function App() {
-  const [load, upadateLoad] = useState(true);
+  const [load, setLoad] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      upadateLoad(false);
+      setLoad(false);
     }, 1200);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <MantineProvider theme={theme}>
+    <MantineProvider theme={theme} defaultColorScheme="dark">
       <Router>
         <Preloader load={load} />
         <div className="App" id={load ? 'no-scroll' : 'scroll'}>

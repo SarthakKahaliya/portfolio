@@ -1,63 +1,100 @@
 import { useComputedColorScheme } from '@mantine/core';
-import Particles from 'react-tsparticles';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
+import type { ISourceOptions } from '@tsparticles/engine';
+import { useEffect, useMemo, useState } from 'react';
+import { loadSlim } from '@tsparticles/slim';
 
 function Particle() {
   const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
-  return (
-    <Particles
-      id="tsparticles"
-      params={{
-        particles: {
-          number: {
-            value: 160,
-            density: {
-              enable: true,
-              value_area: 1500,
-            },
+
+  const [init, setInit] = useState(false);
+
+  // this should be run only once per application lifetime
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+      // starting from v2 you can add only the features you need reducing the bundle size
+      //await loadAll(engine);
+      //await loadFull(engine);
+      await loadSlim(engine);
+      //await loadBasic(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+
+  const options: ISourceOptions = useMemo(
+    () => ({
+      fpsLimit: 120,
+      interactivity: {
+        events: {
+          onClick: {
+            enable: true,
+            mode: 'push',
           },
-          line_linked: {
-            enable: false,
-            opacity: 0.03,
+          onHover: {
+            enable: true,
+            mode: 'repulse',
           },
-          move: {
-            direction: 'right',
-            speed: 0.05,
+        },
+        modes: {
+          push: {
+            quantity: 4,
           },
-          size: {
-            value: 1,
+          repulse: {
+            distance: 200,
+            duration: 0.4,
           },
-          opacity: {
-            anim: {
-              enable: true,
-              speed: 1,
-              opacity_min: 0.05,
-            },
-          },
-          // color: {
-          //   "value": {
-          //     "r": 100,
-          //     "b": 100,
-          //     "g": 0,
-          //   }
+        },
+      },
+      particles: {
+        color: {
+          value: computedColorScheme === 'dark' ? '#ffffff' : '#700aa0',
+        },
+        links: {
+          color: computedColorScheme === 'dark' ? '#ffffff' : '#b863df',
+          distance: 150,
+          enable: true,
+          opacity: 0.5,
+          width: 1,
+        },
+        move: {
+          // direction: MoveDirection.none,
+          enable: true,
+          // outModes: {
+          //   // default: OutMode.out,
           // },
+          random: false,
+          speed: 2,
+          straight: false,
         },
-        interactivity: {
-          events: {
-            onclick: {
-              enable: true,
-              mode: 'push',
-            },
+        number: {
+          density: {
+            enable: true,
           },
-          modes: {
-            push: {
-              particles_nb: 1,
-            },
-          },
+          value: 80,
         },
-        retina_detect: true,
-      }}
-    />
+        opacity: {
+          value: 0.5,
+        },
+        shape: {
+          type: 'circle',
+        },
+        size: {
+          value: { min: 1, max: 5 },
+        },
+      },
+      detectRetina: true,
+    }),
+    [computedColorScheme]
   );
+
+  if (init) {
+    return <Particles id="tsparticles" options={options} />;
+  }
+
+  return <></>;
 }
 
 export default Particle;
