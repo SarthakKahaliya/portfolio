@@ -14,13 +14,14 @@ function Home2() {
   let monthsDifference = now.getMonth() - startDate.getMonth();
 
   if (monthsDifference < 0) {
-    yearsDifference--;
+    yearsDifference -= 1;
     monthsDifference += 12;
   }
-  
-  const yearString = yearsDifference !== 0 && `${yearsDifference} ${yearsDifference > 1 ? "years" : "year"}`;
-  const monthString = monthsDifference !== 0 && `${monthsDifference} ${monthsDifference > 1 ? "months" : "month"}`;
 
+  const yearString =
+    yearsDifference !== 0 && `${yearsDifference} ${yearsDifference > 1 ? 'years' : 'year'}`;
+  const monthString =
+    monthsDifference !== 0 && `${monthsDifference} ${monthsDifference > 1 ? 'months' : 'month'}`;
 
   return (
     <Container fluid className="home-about-section" id="about">
@@ -31,37 +32,39 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I am a full time software engineer with <b className="purple">{yearString} {monthString} </b>  of experience in the industry
-              building Web Applications
+              I am a full time software engineer with
+              <b className="purple">
+                {' '}
+                {yearString} {monthString}{' '}
+              </b>
+              of experience in the industry building
               <i>
-                <b className="purple"> Virginia Tech</b>
-              </i>{' '}
-              who loves building
-              <i>
-                <b className="purple"> Software and Web Applications.</b>
-              </i>{' '}
-              <br />
-              <br />I am fluent in languages like
-              <i>
-                <b className="purple"> Python, Javascript (ES6) and C#. </b>
-              </i>
-              <br />
-              <br />I have experience builidng &nbsp;
-              <i>
-                <b className="purple">AR/VR/MR applications </b>using{' '}
-                <b className="purple">Unity 3D and C#.</b>{' '}
+                <b className="purple"> Frontend Web Applications and Backend Services.</b>
               </i>
               <br />
               <br />
-              Whenever possible, I also apply my passion for developing products with{' '}
-              <b className="purple">Node.js</b> and
+              Using programming languages like
               <i>
-                <b className="purple"> Modern Javascript Library and Frameworks</b>
+                <b className="purple"> Python, Go (GoLang), TypeScript and C# </b>
               </i>
-              &nbsp; like
+              and modern Javascript Libraries, Frameworks and services like
               <i>
-                <b className="purple"> React.js and Vue.js</b>
+                <b className="purple"> React, NextJS, AWS, RxDB</b> (to build Offline first
+                collaborative web applications).
               </i>
+              <br />
+              <br />I also have experience building &nbsp;
+              <i>
+                <b className="purple">AR/VR/MR applications </b>using
+                <b className="purple"> Unity 3D and C#. </b>
+              </i>
+              <br />
+              <br />I enjoy
+              <i>
+                <b className="purple"> software development / coding </b>
+              </i>
+              in general and whenever possible, I try to learn new technologies for
+              <b className="purple"> Fun!</b>
             </p>
           </Col>
           <Col md={4} className="myAvtar">
