@@ -17,6 +17,12 @@ body {
 
   --my-text-color: light-dark(black, white);
   --imp-text-color: light-dark(#700aa0, #cd5ff8);
+  --my-background-color: light-dark(
+    linear-gradient(to left, rgb(226, 210, 254), rgb(219, 208, 254)),
+    linear-gradient(to left, rgb(27 20 41), rgb(20 15 35))
+  );
+  color: light-dark(black, white);
+  background-image: var(--my-background-color);
 }
 
 .my-text-color {
