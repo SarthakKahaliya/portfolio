@@ -1,5 +1,6 @@
 {
-  "name": "mantine-vite-template",
+  "name": "portfolio",
+  "homepage": "https://sarthakkahaliya.github.io/portfolio/",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -7,6 +8,8 @@
     "start": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "typecheck": "tsc --noEmit",
     "lint": "npm run lint:eslint && npm run lint:stylelint",
     "lint:eslint": "eslint . --ext .ts,.tsx --cache",
@@ -64,6 +67,7 @@
     "eslint-plugin-jsx-a11y": "^6.9.0",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^4.6.2",
+    "gh-pages": "^6.1.1",
     "identity-obj-proxy": "^3.0.0",
     "jsdom": "^24.1.1",
     "postcss": "^8.4.41",
