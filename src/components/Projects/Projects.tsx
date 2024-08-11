@@ -5,10 +5,12 @@ import leaf from '../../Assets/Projects/olympic.png';
 import editor from '../../Assets/Projects/tms.png';
 import chatify from '../../Assets/Projects/bookstore.png';
 import bitsOfCode from '../../Assets/Projects/ecom-clothing.png';
+import ScrollToTop from '../ScrollToTop';
 
 function Projects() {
   return (
     <Container fluid className="project-section">
+      <ScrollToTop />
       <Particle />
       <Container>
         <h1 className="project-heading">

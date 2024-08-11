@@ -7,10 +7,12 @@ import Aboutcard from './AboutCard';
 import laptopImg from '../../Assets/about.png';
 import Toolstack from './Toolstack';
 import Expstack from './Expstack';
+import ScrollToTop from '../ScrollToTop';
 
 function About() {
   return (
     <Container fluid className="about-section">
+      <ScrollToTop />
       <Particle />
       <Container>
         <Row style={{ justifyContent: 'center', padding: '10px' }}>

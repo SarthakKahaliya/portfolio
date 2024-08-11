@@ -4,7 +4,6 @@ import { MantineProvider } from '@mantine/core';
 import Preloader from './components/Pre';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
 import './style.css';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -30,7 +29,6 @@ function App() {
         <Preloader load={load} />
         <div className="App" id={load ? 'no-scroll' : 'scroll'}>
           <Navbar />
-          <ScrollToTop />
           <Routes>
             <Route path="portfolio">
               <Route index element={<HashRouter />} />

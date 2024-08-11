@@ -6,6 +6,7 @@ import { Document, Page, pdfjs } from 'react-pdf';
 import Particle from '../Particle';
 import pdf from '../../Assets/Sarthak_Kahaliya_Resume_June_24.pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+import ScrollToTop from '../ScrollToTop';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.mjs`;
 
@@ -22,6 +23,7 @@ function ResumeNew() {
   return (
     <div>
       <Container fluid className="resume-section">
+      <ScrollToTop />
         <Particle />
         <Row style={{ justifyContent: 'center', position: 'relative' }}>
           <Button variant="primary" href={pdf} target="_blank" style={{ maxWidth: '250px' }}>
