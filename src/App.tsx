@@ -3,17 +3,14 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import { MantineProvider } from '@mantine/core';
 import Preloader from './components/Pre';
 import Navbar from './components/Navbar';
-import Home from './components/Home/Home';
-import About from './components/About/About';
-import Projects from './components/Projects/Projects';
 import Footer from './components/Footer';
-import Resume from './components/Resume/ResumeNew';
 import ScrollToTop from './components/ScrollToTop';
 import './style.css';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@mantine/core/styles.css';
 import { theme } from './theme';
+import HashRouter from './HashRouter';
 // import Contact from "./components/Contact/Contact";
 
 function App() {
@@ -36,11 +33,12 @@ function App() {
           <ScrollToTop />
           <Routes>
             <Route path="portfolio">
-              <Route index element={<Home />} />
-              <Route path="project" element={<Projects />} />
+              <Route index element={<HashRouter />} />
+              {/* Doing this because Github doesn't fully understand nested routes in github pages*/}
+              {/* <Route path="project" element={<Projects />} />
               <Route path="about" element={<About />} />
               <Route path="resume" element={<Resume />} />
-              <Route path="*" element={<Navigate to="/portfolio" />} />
+              <Route path="*" element={<Navigate to="/portfolio" />} /> */}
             </Route>
             <Route path="*" element={<Navigate to="portfolio" />} />
           </Routes>

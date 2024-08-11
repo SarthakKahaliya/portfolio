@@ -24,30 +24,35 @@ const links = [
     type: HashLink,
     link: '/portfolio#home',
     label: 'Home',
+    path: '#home',
     icon: <AiOutlineHome style={{ marginBottom: '2px' }} />,
   },
   {
     type: Link,
-    link: '/portfolio/about',
+    link: '/portfolio#about',
     label: 'About',
+    path: '#about',
     icon: <AiOutlineUser style={{ marginBottom: '2px' }} />,
   },
   {
     type: Link,
-    link: '/portfolio/project',
+    link: '/portfolio#projects',
     label: 'Projects',
+    path: '#projects',
     icon: <AiOutlineFundProjectionScreen style={{ marginBottom: '2px' }} />,
   },
   {
     type: Link,
-    link: '/portfolio/resume',
+    link: '/portfolio#resume',
     label: 'Resume',
+    path: '#resume',
     icon: <CgFileDocument style={{ marginBottom: '2px' }} />,
   },
   {
     type: HashLink,
     link: '/portfolio#contact',
     label: 'Contact',
+    path: '#contact',
     icon: <AiOutlineMail style={{ marginBottom: '2px' }} />,
   },
 ];
@@ -56,7 +61,7 @@ function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour] = useState(false);
   const isMobile = useMediaQuery('(max-width: 767px)');
-  const { pathname } = useLocation();
+  const { hash: urlHash } = useLocation();
 
   const hash = useHashObserver(['home', 'contact']);
 
@@ -88,7 +93,7 @@ function NavBar() {
                 <Nav.Link
                   as={link.type}
                   to={link.link}
-                  data-active={(hash && link.link.includes(hash)) || pathname === link.link}
+                  data-active={hash ? hash === link.path : urlHash === link.path}
                   onClick={() => updateExpanded(false)}
                 >
                   {link.icon} {link.label}
